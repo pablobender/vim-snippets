@@ -12,7 +12,9 @@ snippet slot
 	<slot></slot>
 
 snippet template
-	<template></template>
+	<template>
+		${0}
+	</template>
 
 snippet transition
 	<transition></transition>
@@ -22,14 +24,14 @@ snippet transition
 snippet vbase
 	<template>
 		<div>
-
+			${1}
 		</div>
 	</template>
 
 	<script>
-		export default{
-			${0}
-		}
+	export default {
+		${0}
+	}
 	</script>
 
 	<style scoped>
@@ -37,7 +39,7 @@ snippet vbase
 	</style>
 
 snippet vimport:c
-	import ${1:Name} from './components/$1.vue';
+	import ${1:Name} from './components/$1.vue'
 
 	export default {
 		components: {
@@ -48,7 +50,7 @@ snippet vimport:c
 snippet vactions
 	actions: {
 		${1:updateValue}({commit}, ${2:payload}) {
-			commit($1, $2);
+			commit($1, $2)
 		}
 	}
 
@@ -70,31 +72,31 @@ snippet vanim:js:el
 
 snippet vanim:js:method
 	methods: {
-		beforeEnter(el) {
-			console.log('beforeEnter');
+		beforeEnter (el) {
+			console.log('beforeEnter')
 		},
-		enter(el, done) {
-			console.log('enter');
-			done();
+		enter (el, done) {
+			console.log('enter')
+			done()
 		},
-		afterEnter(el) {
-			console.log('afterEnter');
+		afterEnter (el) {
+			console.log('afterEnter')
 		},
-		enterCancelled(el, done) {
-			console.log('enterCancelled');
+		enterCancelled (el, done) {
+			console.log('enterCancelled')
 		},
-		beforeLeave(el) {
-			console.log('beforeLeave');
+		beforeLeave (el) {
+			console.log('beforeLeave')
 		},
-		leave(el, done) {
-			console.log('leave');
-			done();
+		leave (el, done) {
+			console.log('leave')
+			done()
 		},
-		afterLeave(el) {
-			console.log('afterLeave');
+		afterLeave (el) {
+			console.log('afterLeave')
 		},
-		leaveCancelled(el, done) {
-			console.log('leaveCancelled');
+		leaveCancelled (el, done) {
+			console.log('leaveCancelled')
 		}
 	}
 
@@ -102,16 +104,16 @@ snippet vcl
 	@click="${1}"
 
 snippet vdata
-	data() {
+	data () {
 		return {
 			${1:key}: ${2:value}
-		};
+		}
 	}
 
 snippet vfilter
 	filters: {
-		${1:fnName}: function(${2:value}) {
-			return;
+		${1:fnName}: function (${2:value}) {
+			return
 		}
 	}
 
@@ -123,12 +125,12 @@ snippet vfor
 snippet vgetters
 	getters: {
 		${1:value}: state => {
-			return state.$1;
+			return state.$1
 		}
 	}
 
 snippet vimport
-	import ${1:New} from './components/$1.vue';
+	import ${1:New} from './components/$1.vue'
 
 snippet vkeep
 	<keep-alive>
@@ -139,7 +141,7 @@ snippet vkeep
 
 snippet vmixin
 	const ${1:mixinName} = {
-		mounted() {
+		mounted () {
 			console.log('hello from mixin!')
 		},
 	}
@@ -150,7 +152,7 @@ snippet vmixin
 snippet vmutations
 	mutations: {
 		${1:updateValue}(state, ${3:payload}) => {
-			state.${2:value} = $3;
+			state.${2:value} = $3
 		}
 	}
 
@@ -166,13 +168,13 @@ snippet vprops
 	},
 
 snippet vstore
-	import Vue from 'vue';
-	import Vuex from 'vuex';
+	import Vue from 'vue'
+	import Vuex from 'vuex'
 
-	Vue.use(Vuex);
+	Vue.use(Vuex)
 
 	export const store = new Vuex.Store({
 		state: {
 			${1:key}: ${2:value}
 		}
-	});
+	})
